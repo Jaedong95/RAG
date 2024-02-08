@@ -1,0 +1,7 @@
+{
+    "index_path": "/workspace/db/chorma-llama/", 
+    "vectordb_path": "/workspace/db/chroma-llama",
+    "engine_type": "desc",   
+    "embedding_model": "kakaobank/kf-deberta-base",
+    "language_model": "davidkim205/komt-mistral-7b-v1"
+}
