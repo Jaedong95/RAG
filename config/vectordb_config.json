@@ -1,0 +1,14 @@
+{
+    "host": "192.168.0.146",
+    "vectordb_path": "/rag/db/chroma-llama",
+    "data_path": "/rag/data/financial",
+    "db_type": "chroma",
+    "chunk_size": 512, 
+    "chunk_overlap": 30,
+    "collection_name": "qualification",
+    "file_name": "SHINHAN BANK_Financial_Product_Scraping_Result_20240104_LOAN_vec.csv",
+    "emb_col": "대출신청자격",
+    "metadata_col": {"id": "대출_고유키", "name": "금융상품명"},    
+    "embedding_model": "kakaobank/kf-deberta-base",
+    "language_model": "davidkim205/komt-mistral-7b-v1"
+}
