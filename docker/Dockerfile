@@ -23,4 +23,4 @@ RUN apt-get install python3-pip -y
 RUN pip install jupyter notebook
 RUN jupyter notebook --generate-config 
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /root/.jupyter/jupyter_notebook_conifg.py
-RUN pip install -r requirements.txtdsd
+RUN pip install -r requirements.txt
