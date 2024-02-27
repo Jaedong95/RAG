@@ -22,9 +22,9 @@ def main(cli_argse):
         collection_list = list(map(lambda x: x.name, chromadb.client.list_collections()))
         print(f'Vector DB collections: {collection_list}')
         print(f'-' * 10)
-        collection = chromadb.get_collection()
+        db_collection = chromadb.get_collection(db_config['collection_name'])
         print(f"현재 collection: {db_config['collection_name']}")
-        print(f"collection {db_config['collection_name']} 개수: {collection.count()}개")
+        print(f"collection {db_config['collection_name']} 개수: {db_collection.count()}개")
 
         act_type = 0; act_flag = 0 
         if db_config['collection_name'] not in collection_list:
@@ -46,7 +46,6 @@ def main(cli_argse):
                 break
         
         if act_type == '0' or act_type == '1':
-            db_collection = chromadb.get_collection()
             db_store = ChromaVectorStore(chroma_collection=db_collection)
             db_storage = StorageContext.from_defaults(vector_store=db_store)
             

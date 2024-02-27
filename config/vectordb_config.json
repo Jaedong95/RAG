@@ -5,10 +5,10 @@
     "db_type": "chroma",
     "chunk_size": 512, 
     "chunk_overlap": 30,
-    "collection_name": "qualification",
-    "file_name": "SHINHAN BANK_Financial_Product_Scraping_Result_20240104_LOAN_vec.csv",
-    "emb_col": "대출신청자격",
-    "metadata_col": {"id": "대출_고유키", "name": "금융상품명"},    
+    "collection_name": "deposit",
+    "file_name": "SHINHAN BANK_Financial_Product_Scraping_Result_20240104_DEPOSIT_vec.csv",
+    "emb_col": "상품설명",
+    "metadata_col": {"id": "예금_고유키", "name": "금융상품명", "emb_name": "상품설명"},    
     "embedding_model": "kakaobank/kf-deberta-base",
     "language_model": "davidkim205/komt-mistral-7b-v1"
 }

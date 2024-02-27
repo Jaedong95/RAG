@@ -1,4 +1,6 @@
-{
+{   
+    "model_type": "mistral",
+    "model_path": "/rag/models", 
     "index_path": "/rag/db/chorma-llama/", 
     "vectordb_path": "/rag/db/chroma-llama",
     "data_path": "/rag/data/",
