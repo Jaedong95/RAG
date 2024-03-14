@@ -2,10 +2,20 @@ from llama_index.retrievers import VectorIndexRetriever
 from llama_index.postprocessor import SimilarityPostprocessor 
 from llama_index.postprocessor import SentenceTransformerRerank 
 from llama_index.postprocessor import SimilarityPostprocessor, CohereRerank
+from llama_index.selectors import EmbeddingSingleSelector
+from llama_index.retrievers import RouterRetriever
 
 class IndexRetriever():
-    def __init__(self, vector_idx, embedding_service, top_k=5, verbose=True):
-        self.retriever = VectorIndexRetriever(index=vector_idx, service_context=embedding_service, similarity_top_k=top_k, verbose=verbose)
+    def __init__(self, vector_idx=None, embed_model=None, embedding_service=None, top_k=None, vector_tool=None, retrieve_type=None, verbose=True):
+        if retrieve_type == 'router':
+            self.retriever = RouterRetriever(
+                selector = EmbeddingSingleSelector.from_defaults(embed_model=embed_model),
+                retriever_tools=list(vector_tool.values()),
+                service_context = embedding_service
+            )
+        else:
+            top_k=5 
+            self.retriever = VectorIndexRetriever(index=vector_idx, service_context=embedding_service, similarity_top_k=top_k, verbose=verbose)
 
     def retrieve_nodes(self, query):
         nodes = self.retriever.retrieve(query)
@@ -36,3 +46,4 @@ class IndexRetriever():
             )
             return reranked_nodes
         return processed_nodes 
+    
