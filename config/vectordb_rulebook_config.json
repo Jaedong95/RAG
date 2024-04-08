@@ -1,14 +1,12 @@
 {
     "host": "192.168.0.146",
     "vectordb_path": "/rag/db/rule-book",
-    "data_path": "/rag/data/financial",
+    "data_path": "/rag/data/rule-book",
     "db_type": "chroma",
     "chunk_size": 512, 
     "chunk_overlap": 30,
-    "collection_name": "expenditure_resolution",
-    "file_name": "",
-    "emb_col": "상품설명",
-    "metadata_col": {"id": "예금_고유키", "name": "금융상품명", "emb_name": "상품설명"},    
+    "collection_name": "forest_manual",
+    "file_name": "포레스트_통합_메뉴얼.pdf",
     "embedding_model": "kakaobank/kf-deberta-base",
     "language_model": "davidkim205/komt-mistral-7b-v1"
 }
